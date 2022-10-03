@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="8" failures="0" name="QuestionsAboutTheMainTest" time="23.595" errors="0" skipped="0">
+<testsuite tests="8" failures="0" name="QuestionsAboutTheMainTest" time="20.896" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="11.0.16+8-post-Ubuntu-0ubuntu122.04"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-11-openjdk-amd64/lib"/>
-    <property name="maven.multiModuleProjectDirectory" value="/home/larisa/Documents/Sprint_4"/>
+    <property name="maven.multiModuleProjectDirectory" value="/home/larisa/Documents/repo/Sprint_4"/>
     <property name="java.vm.vendor" value="Ubuntu"/>
     <property name="java.vendor.url" value="https://ubuntu.com/"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -14,7 +14,7 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/home/larisa/Documents/Sprint_4"/>
+    <property name="user.dir" value="/home/larisa/Documents/repo/Sprint_4"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="java.runtime.version" value="11.0.16+8-post-Ubuntu-0ubuntu122.04"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
@@ -60,12 +60,12 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="QuestionsAboutTheMainTest" name="checkResponseAboutQuantity_match" time="3.178"/>
-  <testcase classname="QuestionsAboutTheMainTest" name="checkResponseAboutPossibilityOfOrderingToday_match" time="2.599"/>
-  <testcase classname="QuestionsAboutTheMainTest" name="checkResponseAboutCharging_match" time="2.632"/>
-  <testcase classname="QuestionsAboutTheMainTest" name="checkResponseAboutOrder_match" time="3.241"/>
-  <testcase classname="QuestionsAboutTheMainTest" name="checkResponseAboutTimeChangeOfUse_match" time="3.228"/>
-  <testcase classname="QuestionsAboutTheMainTest" name="checkResponseAboutRentalTime_match" time="2.916"/>
-  <testcase classname="QuestionsAboutTheMainTest" name="checkResponseAboutDelivery_match" time="3.351"/>
-  <testcase classname="QuestionsAboutTheMainTest" name="checkResponseAboutCost_match" time="2.45"/>
+  <testcase classname="QuestionsAboutTheMainTest" name="checkResponse_match[0]" time="2.475"/>
+  <testcase classname="QuestionsAboutTheMainTest" name="checkResponse_match[1]" time="2.752"/>
+  <testcase classname="QuestionsAboutTheMainTest" name="checkResponse_match[2]" time="2.657"/>
+  <testcase classname="QuestionsAboutTheMainTest" name="checkResponse_match[3]" time="3.127"/>
+  <testcase classname="QuestionsAboutTheMainTest" name="checkResponse_match[4]" time="2.659"/>
+  <testcase classname="QuestionsAboutTheMainTest" name="checkResponse_match[5]" time="2.445"/>
+  <testcase classname="QuestionsAboutTheMainTest" name="checkResponse_match[6]" time="2.425"/>
+  <testcase classname="QuestionsAboutTheMainTest" name="checkResponse_match[7]" time="2.356"/>
 </testsuite>

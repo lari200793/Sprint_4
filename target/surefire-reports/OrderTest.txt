@@ -1,13 +1,13 @@
 -------------------------------------------------------------------------------
 Test set: OrderTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 17.721 sec <<< FAILURE!
-checkValidityOfFillingOrderData_sucсess[0](OrderTest)  Time elapsed: 3.044 sec  <<< FAILURE!
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 9.164 sec <<< FAILURE!
+checkOrdering_sucсess[0](OrderTest)  Time elapsed: 4.849 sec  <<< FAILURE!
 org.junit.ComparisonFailure: expected:<[Заказ оформлен]> but was:<[Хотите оформить заказ?
  ]>
 	at org.junit.Assert.assertEquals(Assert.java:117)
 	at org.junit.Assert.assertEquals(Assert.java:146)
-	at OrderTest.checkValidityOfFillingOrderData_sucсess(OrderTest.java:94)
+	at OrderTest.checkOrdering_sucсess(OrderTest.java:78)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -51,12 +51,12 @@ org.junit.ComparisonFailure: expected:<[Заказ оформлен]> but was:<[
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-checkValidityOfFillingOrderData_sucсess[1](OrderTest)  Time elapsed: 2.736 sec  <<< FAILURE!
+checkOrdering_sucсess[1](OrderTest)  Time elapsed: 4.228 sec  <<< FAILURE!
 org.junit.ComparisonFailure: expected:<[Заказ оформлен]> but was:<[Хотите оформить заказ?
  ]>
 	at org.junit.Assert.assertEquals(Assert.java:117)
 	at org.junit.Assert.assertEquals(Assert.java:146)
-	at OrderTest.checkValidityOfFillingOrderData_sucсess(OrderTest.java:94)
+	at OrderTest.checkOrdering_sucсess(OrderTest.java:78)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

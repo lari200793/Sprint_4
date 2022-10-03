@@ -5,10 +5,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.concurrent.TimeUnit;
 
 
 public class MainPage{
-    private final WebDriver driver;
+    private WebDriver driver;
     //локатор раздела вопросов о важном
     private final By QUESTION_ABOUT_THE_MAIN = By.className("accordion");
     // локатор вопроса о стоимости
@@ -57,115 +58,75 @@ public class MainPage{
         WebElement element = driver.findElement(QUESTION_ABOUT_THE_MAIN);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
     }
-    public void clickQuestionAboutTheCost(){
-        driver.findElement( QUESTION_ABOUT_THE_COST).click();
+    public String  getTextAnswer (String question) {
+        String answer = null;
+        switch (question) {
+            case "Сколько это стоит? И как оплатить?":
+                driver.findElement(QUESTION_ABOUT_THE_COST).click();
+                driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+                answer = driver.findElement(COST_ANSWER).getText();
+            break;
+            case "Хочу сразу несколько самокатов! Так можно?":
+                driver.findElement(QUESTION_OF_QUANTITY).click();
+                driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+                answer = driver.findElement(QUANTITY_ANSWER).getText();
+                break;
+            case "Как рассчитывается время аренды?":
+                driver.findElement(QUESTION_ABOUT_RENTAL_TIME).click();
+                driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+                answer =  driver.findElement(ANSWER_ABOUT_RENTAL_TIME).getText();
+            break;
+            case "Можно ли заказать самокат прямо на сегодня?":
+                driver.findElement(QUESTION_ABOUT_THE_POSSIBILITY_OF_ORDERING_TODAY).click();
+                driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+                answer = driver.findElement(RESPONSE_ABOUT_THE_POSSIBILITY_OF_ORDERING_TODAY).getText();
+            break;
+            case "Можно ли продлить заказ или вернуть самокат раньше?":
+                driver.findElement(QUESTION_ABOUT_CHANGING_THE_TIME_OF_USE).click();
+                driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+                answer = driver.findElement(TIME_CHANGE_RESPONSE).getText();
+            break;
+            case "Вы привозите зарядку вместе с самокатом?":
+                driver.findElement(QUESTION_ABOUT_CHARGING).click();
+                driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+                answer =  driver.findElement(CHARGING_RESPONSE).getText();
+            break;
+            case "Можно ли отменить заказ?":
+                driver.findElement(QUESTION_ABOUT_CANCELING_AN_ORDER).click();
+                driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+                answer = driver.findElement(ORDER_CANCELLATION_RESPONSE).getText();
+            break;
+            case "Я жизу за МКАДом, привезёте?":
+                driver.findElement(DELIVERY_QUESTION).click();
+                driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+                answer = driver.findElement(DELIVERY_RESPONSE).getText();
+            break;
+
+            default:
+                throw new IllegalStateException("Unexpected value: " + question);
+        }
+        return answer;
+
     }
 
-    public void waitForCost(String expected){
-        new WebDriverWait(driver, 3).until(ExpectedConditions.textToBePresentInElementLocated(COST_ANSWER, expected));
-    }
-
-    public void cost (String expected){
+    public String text ( String  question){
         scrollQuestions();
-        clickQuestionAboutTheCost();
-        waitForCost(expected);
-    }
-    public void clickQuestionOfQuantity(){
-        driver.findElement( QUESTION_OF_QUANTITY).click();
+       return( getTextAnswer(question));
+
     }
 
-    public void waitForQuantity(String expected){
-        new WebDriverWait(driver, 3).until(ExpectedConditions.textToBePresentInElementLocated(QUANTITY_ANSWER, expected));
-    }
-    public void quantity (String expected){
-        scrollQuestions();
-        clickQuestionOfQuantity();
-        waitForQuantity(expected);
-    }
-    public void clickQuestionAboutRentalTime(){
-        driver.findElement(QUESTION_ABOUT_RENTAL_TIME).click();
-    }
-        public void waitForRentalTime(String expected){
-        new WebDriverWait(driver, 3).until(ExpectedConditions.textToBePresentInElementLocated(ANSWER_ABOUT_RENTAL_TIME, expected));
-    }
-    public void rentalTime (String expected){
-        scrollQuestions();
-        clickQuestionAboutRentalTime();
-        waitForRentalTime(expected);
-    }
-    public void clickAboutThePossibilityOfOrderingToday(){
-        driver.findElement(QUESTION_ABOUT_THE_POSSIBILITY_OF_ORDERING_TODAY).click();
-    }
-
-    public void waitPossibilityOfOrderingToday(String expected){
-        new WebDriverWait(driver, 3).until(ExpectedConditions.textToBePresentInElementLocated(RESPONSE_ABOUT_THE_POSSIBILITY_OF_ORDERING_TODAY, expected));
-    }
-    public void possibilityOfOrderingToday(String expected){
-        scrollQuestions();
-        clickAboutThePossibilityOfOrderingToday();
-        waitPossibilityOfOrderingToday(expected);
-    }
-    public void clickQuestionAboutChangingTheTimeOfUse(){
-        driver.findElement(QUESTION_ABOUT_CHANGING_THE_TIME_OF_USE).click();
-    }
-
-    public void waitForTimeChangeResponse(String expected){
-        new WebDriverWait(driver, 3).until(ExpectedConditions.textToBePresentInElementLocated(TIME_CHANGE_RESPONSE, expected));
-    }
-
-    public void timeChangeOfUse (String expected){
-        scrollQuestions();
-        clickQuestionAboutChangingTheTimeOfUse();
-        waitForTimeChangeResponse(expected);
-    }
-    public void clickQuestionAboutCharging(){
-        driver.findElement(QUESTION_ABOUT_CHARGING).click();
-    }
-
-    public void waitForChargingResponse(String expected){
-        new WebDriverWait(driver, 3).until(ExpectedConditions.textToBePresentInElementLocated(CHARGING_RESPONSE, expected));
-    }
-
-    public void charging (String expected) {
-        scrollQuestions();
-        clickQuestionAboutCharging();
-        waitForChargingResponse(expected);
-    }
-    public void clickQuestionAboutCancelingAnOrder(){
-        driver.findElement(QUESTION_ABOUT_CANCELING_AN_ORDER).click();
-    }
-
-    public void waitForOrderCancellationResponse(String expected){
-        new WebDriverWait(driver, 3).until(ExpectedConditions.textToBePresentInElementLocated(ORDER_CANCELLATION_RESPONSE, expected));
-    }
-
-    public void order (String expected){
-        scrollQuestions();
-        clickQuestionAboutCancelingAnOrder();
-        waitForOrderCancellationResponse(expected);
-    }
-    public void clickDeliveryQuestion(){
-        driver.findElement(DELIVERY_QUESTION).click();
-    }
-
-    public void waitForDeliveryResponse(String expected){
-        new WebDriverWait(driver, 3).until(ExpectedConditions.textToBePresentInElementLocated(DELIVERY_RESPONSE, expected));
-    }
-
-    public void delivery (String expected){
-        scrollQuestions();
-        clickDeliveryQuestion();
-        waitForDeliveryResponse(expected);
-    }
-    public void clickFirstButtonOrder(){
-        driver.findElement(FIRST_ODER_BUTTON).click();
-    }
-
-    public void waitForClickSecondButtonOrder(){
-        new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(SECOND_ODER_BUTTON));
-    }
-    public void clickSecondButtonOrder(){
-        driver.findElement(SECOND_ODER_BUTTON).click();
+    public void clickButtonOrder(String button){
+        switch (button){
+            case "Первая":
+                driver.findElement(FIRST_ODER_BUTTON).click();
+            break;
+            case "Вторая":
+                WebElement element = driver.findElement(QUESTION_ABOUT_THE_MAIN);
+                ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
+                new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(SECOND_ODER_BUTTON));
+                driver.findElement(SECOND_ODER_BUTTON).click();
+             break;
+        }
     }
 
 

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="6" failures="2" name="OrderTest" time="17.654" errors="0" skipped="0">
+<testsuite tests="2" failures="2" name="OrderTest" time="9.077" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="11.0.16+8-post-Ubuntu-0ubuntu122.04"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-11-openjdk-amd64/lib"/>
-    <property name="maven.multiModuleProjectDirectory" value="/home/larisa/Documents/Sprint_4"/>
+    <property name="maven.multiModuleProjectDirectory" value="/home/larisa/Documents/repo/Sprint_4"/>
     <property name="java.vm.vendor" value="Ubuntu"/>
     <property name="java.vendor.url" value="https://ubuntu.com/"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -14,7 +14,7 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/home/larisa/Documents/Sprint_4"/>
+    <property name="user.dir" value="/home/larisa/Documents/repo/Sprint_4"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="java.runtime.version" value="11.0.16+8-post-Ubuntu-0ubuntu122.04"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
@@ -60,14 +60,13 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="OrderTest" name="checkOrderSecondButton_click[0]" time="3.843"/>
-  <testcase classname="OrderTest" name="checkValidityOfFillingOrderData_sucсess[0]" time="3.044">
+  <testcase classname="OrderTest" name="checkOrdering_sucсess[0]" time="4.849">
     <failure message="expected:&lt;[Заказ оформлен]&gt; but was:&lt;[Хотите оформить заказ?
  ]&gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: expected:&lt;[Заказ оформлен]&gt; but was:&lt;[Хотите оформить заказ?
  ]&gt;
 	at org.junit.Assert.assertEquals(Assert.java:117)
 	at org.junit.Assert.assertEquals(Assert.java:146)
-	at OrderTest.checkValidityOfFillingOrderData_sucсess(OrderTest.java:94)
+	at OrderTest.checkOrdering_sucсess(OrderTest.java:78)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -111,23 +110,21 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </failure>
-    <system-err>Starting ChromeDriver 106.0.5249.61 (511755355844955cd3e264779baf0dd38212a4d0-refs/branch-heads/5249@{#569}) on port 25957
+    <system-err>Starting ChromeDriver 106.0.5249.61 (511755355844955cd3e264779baf0dd38212a4d0-refs/branch-heads/5249@{#569}) on port 31071
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-Oct 01, 2022 6:12:47 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+Oct 03, 2022 2:02:37 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
 </system-err>
   </testcase>
-  <testcase classname="OrderTest" name="checkOrderFirstButton_click[0]" time="2.623"/>
-  <testcase classname="OrderTest" name="checkOrderSecondButton_click[1]" time="2.721"/>
-  <testcase classname="OrderTest" name="checkValidityOfFillingOrderData_sucсess[1]" time="2.736">
+  <testcase classname="OrderTest" name="checkOrdering_sucсess[1]" time="4.228">
     <failure message="expected:&lt;[Заказ оформлен]&gt; but was:&lt;[Хотите оформить заказ?
  ]&gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: expected:&lt;[Заказ оформлен]&gt; but was:&lt;[Хотите оформить заказ?
  ]&gt;
 	at org.junit.Assert.assertEquals(Assert.java:117)
 	at org.junit.Assert.assertEquals(Assert.java:146)
-	at OrderTest.checkValidityOfFillingOrderData_sucсess(OrderTest.java:94)
+	at OrderTest.checkOrdering_sucсess(OrderTest.java:78)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -171,13 +168,12 @@ INFO: Detected dialect: W3C
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </failure>
-    <system-err>Starting ChromeDriver 106.0.5249.61 (511755355844955cd3e264779baf0dd38212a4d0-refs/branch-heads/5249@{#569}) on port 8620
+    <system-err>Starting ChromeDriver 106.0.5249.61 (511755355844955cd3e264779baf0dd38212a4d0-refs/branch-heads/5249@{#569}) on port 8772
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-Oct 01, 2022 6:12:55 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+Oct 03, 2022 2:02:41 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
 </system-err>
   </testcase>
-  <testcase classname="OrderTest" name="checkOrderFirstButton_click[1]" time="2.687"/>
 </testsuite>

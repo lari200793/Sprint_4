@@ -44,29 +44,33 @@ public class AboutRentPage {
 
     public void selectOderTime( String day) {
         driver.findElement(ORDER_TIME).click();
-
-        if ( day == "one") {
-            driver.findElement(RENT_ONE_DAY).click();
-        }
-        if ( day == "two") {
-            driver.findElement(RENT_TWO_DAYS).click();
-        }
-        if(day == "three") {
-            driver.findElement(RENT_TREE_DAYS).click();
-        }
-        if (day == "four") {
-            driver.findElement(RENT_FOUR_DAYS).click();
-        }
-        if (day == "five") {
-            driver.findElement(RENT_FIVE_DAYS).click();
-        }
-        if(day == "six") {
-            driver.findElement(RENT_SIX_DAYS).click();
-        }
-        if (day == "seven") {
-            driver.findElement(RENT_SEVEN_DAYS).click();
+        switch (day) {
+            case "one":
+                driver.findElement(RENT_ONE_DAY).click();
+                break;
+            case "two":
+                driver.findElement(RENT_TWO_DAYS).click();
+                break;
+            case "three":
+                driver.findElement(RENT_TREE_DAYS).click();
+                break;
+            case "four":
+                driver.findElement(RENT_FOUR_DAYS).click();
+                break;
+            case "five":
+                driver.findElement(RENT_FIVE_DAYS).click();
+                break;
+            case "six":
+                driver.findElement(RENT_SIX_DAYS).click();
+                break;
+            case "seven":
+                driver.findElement(RENT_SEVEN_DAYS).click();
+                break;
         }
     }
+
+
+
 
     public void selectColourScooter(String colour) {
         if (colour == "black") {

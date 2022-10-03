@@ -10,7 +10,7 @@ public class FillingInUserDataPage {
     private final By TITLE_FOR_THE_ODER_FORM = By.className("Order_Header__BZXOb");
     // поля для заполнения имени заказчика
     private final By CLIENT_NAME =By.xpath("//*[@placeholder='* Имя']");
-    // поле для заполнения Фамиллии заказчика
+    // поле для заполнения Фамилии заказчика
 
     private final By CLIENT_SECOND_NAME= By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div[2]/input");
     // поле для заполнения адреса заказчика
@@ -33,7 +33,7 @@ public class FillingInUserDataPage {
     public void enterClientName( String name){
        driver.findElement(CLIENT_NAME).sendKeys(name);
     }
-    public void entrerClientSecondName(String secondName){
+    public void enterClientSecondName(String secondName){
         new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(CLIENT_SECOND_NAME));
         driver.findElement(CLIENT_SECOND_NAME).sendKeys(secondName);
     }
@@ -54,3 +54,4 @@ public class FillingInUserDataPage {
     }
 
 }
+
