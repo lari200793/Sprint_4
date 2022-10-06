@@ -47,7 +47,7 @@ public class MainPage{
     // первая кнопка заказать
     private final By FIRST_ODER_BUTTON = By.className("Button_Button__ra12g");
     // вторая кнопка закзать
-    private final By SECOND_ODER_BUTTON = By.cssSelector("div>div>div>div>div>div>button");
+    private final By SECOND_ODER_BUTTON = By.xpath("//*[@id=\"root\"]/div/div/div[4]/div[2]/div[5]/button");
 
 
     public MainPage(WebDriver driver) {
@@ -63,42 +63,42 @@ public class MainPage{
         switch (question) {
             case "Сколько это стоит? И как оплатить?":
                 driver.findElement(QUESTION_ABOUT_THE_COST).click();
-                driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+                driver.manage().timeouts().implicitlyWait(10000, TimeUnit.SECONDS);
                 answer = driver.findElement(COST_ANSWER).getText();
             break;
             case "Хочу сразу несколько самокатов! Так можно?":
                 driver.findElement(QUESTION_OF_QUANTITY).click();
-                driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+                driver.manage().timeouts().implicitlyWait(10000, TimeUnit.SECONDS);
                 answer = driver.findElement(QUANTITY_ANSWER).getText();
                 break;
             case "Как рассчитывается время аренды?":
                 driver.findElement(QUESTION_ABOUT_RENTAL_TIME).click();
-                driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+                driver.manage().timeouts().implicitlyWait(10000, TimeUnit.SECONDS);
                 answer =  driver.findElement(ANSWER_ABOUT_RENTAL_TIME).getText();
             break;
             case "Можно ли заказать самокат прямо на сегодня?":
                 driver.findElement(QUESTION_ABOUT_THE_POSSIBILITY_OF_ORDERING_TODAY).click();
-                driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+                driver.manage().timeouts().implicitlyWait(10000, TimeUnit.SECONDS);
                 answer = driver.findElement(RESPONSE_ABOUT_THE_POSSIBILITY_OF_ORDERING_TODAY).getText();
             break;
             case "Можно ли продлить заказ или вернуть самокат раньше?":
                 driver.findElement(QUESTION_ABOUT_CHANGING_THE_TIME_OF_USE).click();
-                driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+                driver.manage().timeouts().implicitlyWait(10000, TimeUnit.SECONDS);
                 answer = driver.findElement(TIME_CHANGE_RESPONSE).getText();
             break;
             case "Вы привозите зарядку вместе с самокатом?":
                 driver.findElement(QUESTION_ABOUT_CHARGING).click();
-                driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+                driver.manage().timeouts().implicitlyWait(10000, TimeUnit.SECONDS);
                 answer =  driver.findElement(CHARGING_RESPONSE).getText();
             break;
             case "Можно ли отменить заказ?":
                 driver.findElement(QUESTION_ABOUT_CANCELING_AN_ORDER).click();
-                driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+                driver.manage().timeouts().implicitlyWait(10000, TimeUnit.SECONDS);
                 answer = driver.findElement(ORDER_CANCELLATION_RESPONSE).getText();
             break;
             case "Я жизу за МКАДом, привезёте?":
                 driver.findElement(DELIVERY_QUESTION).click();
-                driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+                driver.manage().timeouts().implicitlyWait(10000, TimeUnit.SECONDS);
                 answer = driver.findElement(DELIVERY_RESPONSE).getText();
             break;
 

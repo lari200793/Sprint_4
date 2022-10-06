@@ -59,7 +59,7 @@ public class OrderTest {
 
 
     @Test
-    public void checkOrdering_sucсess(){
+    public void checkOrdering_success(){
         MainPage objMainPage = new MainPage(driver);
         objMainPage.clickButtonOrder(button);
         FillingInUserDataPage objFillingInUserDataPage = new FillingInUserDataPage(driver);
