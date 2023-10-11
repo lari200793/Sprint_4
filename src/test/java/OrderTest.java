@@ -5,7 +5,12 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import static org.junit.Assert.assertEquals;
 
@@ -52,9 +57,12 @@ public class OrderTest {
     }
 
     @Before
-    public void openWebsite() {
-      driver = new ChromeDriver();
-      driver.get("https://qa-scooter.praktikum-services.ru/");
+    public void openWebsite() throws MalformedURLException {
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.setCapability("browserVersion", "74");
+        chromeOptions.setCapability("platformName", "Windows 10");
+        WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), chromeOptions);
+        driver.get("https://qa-scooter.praktikum-services.ru/");
     }
 
 
@@ -78,7 +86,6 @@ public class OrderTest {
         assertEquals(result,objAboutRentPage.findHeaderFormRental());
 
     }
-
     @After
     public void quitWebsite(){
         driver.quit();
