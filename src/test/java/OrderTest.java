@@ -3,15 +3,10 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-
 import java.net.MalformedURLException;
 import java.net.URI;
-import java.net.URL;
 
 import static org.junit.Assert.assertEquals;
 
@@ -59,7 +54,7 @@ public class OrderTest {
 
     @Before
     public void openWebsite() throws MalformedURLException {
-        DesiredCapabilities browser = new DesiredCapabilities().chrome();
+        DesiredCapabilities browser = new DesiredCapabilities();
         browser.setBrowserName("chrome");
         browser.setVersion("116.0");
         driver = new RemoteWebDriver(URI.create("http://192.168.0.104:4444/wd/hub").toURL(), browser);

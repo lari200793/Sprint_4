@@ -39,7 +39,7 @@ public class QuestionsAboutTheMainTest {
     }
     @Before
     public void openWebsite() throws MalformedURLException {
-        DesiredCapabilities browser = new DesiredCapabilities().chrome();
+        DesiredCapabilities browser = new DesiredCapabilities();
         browser.setBrowserName("chrome");
         browser.setVersion("116.0");
         driver = new RemoteWebDriver(URI.create("http://192.168.0.104:4444/wd/hub").toURL(), browser);
