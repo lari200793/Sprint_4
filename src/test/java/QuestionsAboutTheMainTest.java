@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.net.MalformedURLException;
 import java.net.URI;
 
 import static org.junit.Assert.*;
@@ -37,7 +38,7 @@ public class QuestionsAboutTheMainTest {
         };
     }
     @Before
-    public void openWebsite() {
+    public void openWebsite() throws MalformedURLException {
         DesiredCapabilities browser = new DesiredCapabilities().chrome();
         browser.setBrowserName("chrome");
         browser.setVersion("116.0");
