@@ -10,13 +10,14 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
+import java.net.URI;
 import java.net.URL;
 
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
 public class OrderTest {
-    private WebDriver driver;
+    private RemoteWebDriver driver;
     private String button;
     private String name;
     private String secondName;
@@ -58,11 +59,12 @@ public class OrderTest {
 
     @Before
     public void openWebsite() throws MalformedURLException {
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.setCapability("browserVersion", "74");
-        chromeOptions.setCapability("platformName", "Windows 10");
-        WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), chromeOptions);
+        DesiredCapabilities browser = new DesiredCapabilities().chrome();
+        browser.setBrowserName("chrome");
+        browser.setVersion("116.0");
+        driver = new RemoteWebDriver(URI.create("http://192.168.0.104:4444/wd/hub").toURL(), browser);
         driver.get("https://qa-scooter.praktikum-services.ru/");
+
     }
 
 

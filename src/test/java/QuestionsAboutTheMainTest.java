@@ -6,12 +6,16 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.net.URI;
 
 import static org.junit.Assert.*;
 
 @RunWith(Parameterized.class)
 public class QuestionsAboutTheMainTest {
-    private WebDriver driver;
+    private RemoteWebDriver driver;
     private String expected;
     private String question;
 
@@ -34,7 +38,10 @@ public class QuestionsAboutTheMainTest {
     }
     @Before
     public void openWebsite() {
-        driver = new ChromeDriver();
+        DesiredCapabilities browser = new DesiredCapabilities().chrome();
+        browser.setBrowserName("chrome");
+        browser.setVersion("116.0");
+        driver = new RemoteWebDriver(URI.create("http://192.168.0.104:4444/wd/hub").toURL(), browser);
         driver.get("https://qa-scooter.praktikum-services.ru/");
     }
 
